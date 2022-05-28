@@ -7,7 +7,6 @@
 
 </head> 	
 <body>
-
 <div id="container">
 
 <header>My Web Site Brand</header>
@@ -23,7 +22,7 @@
 <main>
   <h1>My Fourth Heading</h1>
   <p>My Fourth paragraph.</p>
-
+  <div id="gallery">
     <ul id="album">
       <!--<li id="photo"><img src="images/winterland1.jpg"></li>
       <li id="photo"><img src="images/winterland2.jpg"></li>
@@ -32,106 +31,22 @@
       <li id="photo"><img src="images/winterland5.jpg"></li>
       <li id="photo"><img src="images/winterland6.jpg"></li>-->
     </ul>
+    <!-- LAB ASSIGNMENT -->
+    <div id="infoBox">
+      <div id="title"></div>
+      <div id="info"></div>
+      <p id="closeInfo"></p>
+    </div>
+    <!-- END LAB ASSIGNMENT -->
+  </div>
 </main>
 
 <footer>&copy; Copyright 2020</footer>
 
 </div>
 
-<div id="popup">
-
-
-
-</div>
-
-
-
-<script>
-  var photos = []; //Declare an empty array to store image element
-  var fileNames = []; //Declare an empty element to store image file names
-  var imageList = []; //Declare an empty array to store html list that contain an image
-  var image; //Declare an empty variable to store the assembled image list codes
-  var openList1 = "<li id='photo"
-  var openList2 = "'>"; //Declare a variable to contain open list tag
-  var closeList = "</li>"; //Declare a variable to contain an close list tag
-  var openCaption = "<p class='caption'>";
-  var closeCaption = "</p>";
-  var captionText = ["Beautiful Winter","Snow Land","Wintery Road","Winter in the Country","Bitter Cold Day","Sunny Winter Day"];
-  var openDesc = "<div class='description'>";
-  var closeDesc = "</div>";
-  var descText = [
-    "A beautiful winter scenery in the morning",
-    "After an overnight snowstorm",
-    "Snowy drive on the road",
-    "Snow day in the country",
-    "Burrrrr...a typical cold in January",
-    "Cold, snowy but sunny and beautiful"
-  ];
-
-//   pop//
-//   var openPop="<div id='Popup'>";
-//   var closePop="</div>";
-//   var paraOpen="<p>";
-//   var paraClose="</p>";
-//   var paragraph = ["paragraph1","paragraph2","paragraph3", "paragraph4","paragraph5","paragraph6"];
-//   var popList=[];
-//   var pop;
-//   var closebuttonOpen="<p>";
-//   var closebuttonClose="</p>";
-//   var content="Close this to close";
-// var captiononPop=  openCaption+ captionText[i] + closeCaption;
-// var infoPop=paraOpen + paragraph[i] + paraClose;
-// var button= closebuttonOpen + content + closebuttonClose;
-
-
-var closeinfoBox = "Click to close";
-var openDescTag = "<p class='description' onClick='showinfoBox(";
-var openDescClose = ")'>";
-var closeDescTag = "</p>";
-var descriptions=[];
-
-var titleTexts =["Beautiful Winter","Snow Land","Wintery Road","Winter in the Country","Bitter Cold Day","Sunny Winter Day"];
-var descTexts=["paragraph1","paragraph2","paragraph3", "paragraph4","paragraph5","paragraph6"];
-
-
-  for (var i=0; i<6; i++) {
-    fileNames.push("winterland"+(i+1)); //Create image file name and store in the array
-    photos.push("<img src='images/"+fileNames[i]+".jpg'>"); //Assemble file name into image element and store in an array
-    
-    //Assemble the image element from the array with list element stored in variables
-    descriptions.push(openDescTag + [i] + openDescClose + descTexts[i] + closeDescTag);  
-
-    image = openList1 + (i+1) + openList2 + descriptions[i] + photos[i] + "<br>" + openCaption + captionText[i] + closeCaption + 
-    openDesc + descText[i] + closeDesc + closeList; 
-    imageList.push(image); //Store(push) the assembled list codes into an array
-  }
-
- 
-
-  function showinfoBox(i) {
-    document.getElementById("infoBox").style.visibility = 'visible';
-    document.getElementById("title").innerHTML = titleTexts[i];
-    document.getElementById("info").innerHTML = descTexts[i];
-    document.getElementById("closeInfo").innerHTML = closeinfoBox;
-};
-  
-  //Display all six image codes stored in the array
-document.getElementById("album").innerHTML = imageList;
-
-
-var closeInfo = document.getElementById("closeInfo");
-closeInfo.addEventListener("click", hideinfoBox);
-function hideinfoBox() {
-    document.getElementById("infoBox").style.visibility = 'hidden';
-};
-
-</script>
-
-
-
-
-
-
+<!-- LAB ASSIGNMENT -->
+<script src="meishen.js"></script>
 
 </body>
 </html>
