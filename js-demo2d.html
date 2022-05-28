@@ -38,6 +38,14 @@
 
 </div>
 
+<div id="popup">
+
+
+
+</div>
+
+
+
 <script>
   var photos = []; //Declare an empty array to store image element
   var fileNames = []; //Declare an empty element to store image file names
@@ -58,22 +66,72 @@
     "Snow day in the country",
     "Burrrrr...a typical cold in January",
     "Cold, snowy but sunny and beautiful"
-  ]
+  ];
+
+//   pop//
+//   var openPop="<div id='Popup'>";
+//   var closePop="</div>";
+//   var paraOpen="<p>";
+//   var paraClose="</p>";
+//   var paragraph = ["paragraph1","paragraph2","paragraph3", "paragraph4","paragraph5","paragraph6"];
+//   var popList=[];
+//   var pop;
+//   var closebuttonOpen="<p>";
+//   var closebuttonClose="</p>";
+//   var content="Close this to close";
+// var captiononPop=  openCaption+ captionText[i] + closeCaption;
+// var infoPop=paraOpen + paragraph[i] + paraClose;
+// var button= closebuttonOpen + content + closebuttonClose;
+
+
+var closeinfoBox = "Click to close";
+var openDescTag = "<p class='description' onClick='showinfoBox(";
+var openDescClose = ")'>";
+var closeDescTag = "</p>";
+var descriptions=[];
+
+var titleTexts =["Beautiful Winter","Snow Land","Wintery Road","Winter in the Country","Bitter Cold Day","Sunny Winter Day"];
+var descTexts=["paragraph1","paragraph2","paragraph3", "paragraph4","paragraph5","paragraph6"];
+
 
   for (var i=0; i<6; i++) {
     fileNames.push("winterland"+(i+1)); //Create image file name and store in the array
     photos.push("<img src='images/"+fileNames[i]+".jpg'>"); //Assemble file name into image element and store in an array
     
     //Assemble the image element from the array with list element stored in variables
-    image = openList1 + (i+1) + openList2 + photos[i] + "<br>" + openCaption + captionText[i] + closeCaption + openDesc + descText[i] + closeDesc + closeList; 
+    descriptions.push(openDescTag + [i] + openDescClose + descTexts[i] + closeDescTag);  
+
+    image = openList1 + (i+1) + openList2 + descriptions[i] + photos[i] + "<br>" + openCaption + captionText[i] + closeCaption + 
+    openDesc + descText[i] + closeDesc + closeList; 
     imageList.push(image); //Store(push) the assembled list codes into an array
-    
   }
+
+ 
+
+  function showinfoBox(i) {
+    document.getElementById("infoBox").style.visibility = 'visible';
+    document.getElementById("title").innerHTML = titleTexts[i];
+    document.getElementById("info").innerHTML = descTexts[i];
+    document.getElementById("closeInfo").innerHTML = closeinfoBox;
+};
   
   //Display all six image codes stored in the array
-  document.getElementById("album").innerHTML = imageList;
+document.getElementById("album").innerHTML = imageList;
+
+
+var closeInfo = document.getElementById("closeInfo");
+closeInfo.addEventListener("click", hideinfoBox);
+function hideinfoBox() {
+    document.getElementById("infoBox").style.visibility = 'hidden';
+};
 
 </script>
+
+
+
+
+
+
 
 </body>
 </html>

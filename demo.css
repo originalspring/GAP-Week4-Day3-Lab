@@ -108,9 +108,51 @@ header {
   main #album li:hover {
     cursor: pointer;
   }
-  main #album li:hover .description {
+  main #album li:hover .description{
     visibility: visible;
   }
+
+/* //info// */
+  #infoBox {
+    background: darkgrey;
+    opacity: 0.95;
+    width: 500px;
+    height: 300px;
+    position: absolute; 
+    top: 300px;
+    left: 20%;
+    visibility: hidden; 
+}
+
+#title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: darkslategrey;
+  padding: 20px 0px 0px 20px;
+}
+
+#info {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: darkslategrey;
+  padding: 20px 0px 0px 20px;
+}
+
+#closeInfo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  color: black;
+  padding: 20px 0px 0px 20px;
+}
+
+  /*pop*/
+  /* main #album li:hover .Popup {
+    visibility: visible;
+  } */
+
+ 
   /* End Lab Assignment */
 
   footer {
