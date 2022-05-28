@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>  
+<title>My Fourth Web Page</title>
+
+<link rel="stylesheet" href="demo.css">
+
+</head> 	
+<body>
+
+<div id="container">
+
+<header>My Web Site Brand</header>
+<nav>
+	<ul>
+    <li><a href="js-demo2.html">Home</a></li>
+    <li><a href="js-demo2b.html">About</a></li>
+    <li><a href="js-demo2d.html">Gallery</a></li>
+    <li><a href="js-demo2c.html">Contact</a></li>
+	</ul>
+</nav>
+
+<main>
+  <h1>My Fourth Heading</h1>
+  <p>My Fourth paragraph.</p>
+
+    <ul id="album">
+      <!--<li id="photo"><img src="images/winterland1.jpg"></li>
+      <li id="photo"><img src="images/winterland2.jpg"></li>
+      <li id="photo"><img src="images/winterland3.jpg"></li>
+      <li id="photo"><img src="images/winterland4.jpg"></li>
+      <li id="photo"><img src="images/winterland5.jpg"></li>
+      <li id="photo"><img src="images/winterland6.jpg"></li>-->
+    </ul>
+</main>
+
+<footer>&copy; Copyright 2020</footer>
+
+</div>
+
+<script>
+  var photos = []; //Declare an empty array to store image element
+  var fileNames = []; //Declare an empty element to store image file names
+  var imageList = []; //Declare an empty array to store html list that contain an image
+  var image; //Declare an empty variable to store the assembled image list codes
+  var openList1 = "<li id='photo"
+  var openList2 = "'>"; //Declare a variable to contain open list tag
+  var closeList = "</li>"; //Declare a variable to contain an close list tag
+  var openCaption = "<p class='caption'>";
+  var closeCaption = "</p>";
+  var captionText = ["Beautiful Winter","Snow Land","Wintery Road","Winter in the Country","Bitter Cold Day","Sunny Winter Day"];
+  var openDesc = "<div class='description'>";
+  var closeDesc = "</div>";
+  var descText = [
+    "A beautiful winter scenery in the morning",
+    "After an overnight snowstorm",
+    "Snowy drive on the road",
+    "Snow day in the country",
+    "Burrrrr...a typical cold in January",
+    "Cold, snowy but sunny and beautiful"
+  ]
+
+  for (var i=0; i<6; i++) {
+    fileNames.push("winterland"+(i+1)); //Create image file name and store in the array
+    photos.push("<img src='images/"+fileNames[i]+".jpg'>"); //Assemble file name into image element and store in an array
+    
+    //Assemble the image element from the array with list element stored in variables
+    image = openList1 + (i+1) + openList2 + photos[i] + "<br>" + openCaption + captionText[i] + closeCaption + openDesc + descText[i] + closeDesc + closeList; 
+    imageList.push(image); //Store(push) the assembled list codes into an array
+    
+  }
+  
+  //Display all six image codes stored in the array
+  document.getElementById("album").innerHTML = imageList;
+
+</script>
+
+</body>
+</html>
